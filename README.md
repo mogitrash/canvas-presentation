@@ -110,4 +110,34 @@ ctx.fillRect(10, 10, 150, 100);
 
 ![image](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/0af9a662-2d38-4d81-873e-e31f61b51eef)
 
+## Basic animations
 
+Since we're using JavaScript to control `<canvas>` elements, it's also very easy to make animations. In this chapter we will take a look at how to do some basic animations.
+
+### Basic animations steps
+
+1. **Clear the canvas.** Since each individual frame will occupy the entire surface of the canvas, we need to clean up before drawing a new frame of our animation. The easiest way to do this is using the `clearRect()` method.
+2. **Save the canvas state.**
+   - When you call the `save()` method on the canvas context, it saves the current state of the canvas, including all settings like styles, transformations, and other attributes.
+   - Saving the canvas state is essential when you want to make temporary changes for a specific drawing operation and then revert to the original state.
+3. **Draw animated shapes.** The step where you do the actual frame rendering.
+4. **Restore the canvas state.**
+   - After you have made changes to the canvas and want to revert to the saved state, you use the `restore()` method on the canvas context.
+   - Restoring the canvas state allows you to go back to the original settings, transformations, and styles before any modifications were made.
+
+### Controlling an animation
+
+There are 3 main ways to **schedule update** of canvas: 
+   1. `setInterval()`
+
+      Starts repeatedly executing the `function` specified by function every `delay` milliseconds.
+
+   2. `setTimeout()`
+      
+      Executes the function specified by function in delay milliseconds.
+      
+   3. `requestAnimationFrame(callback)`
+
+      Tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
+
+Despite the first two methods, `requestAnimationFrame(callback)` copes with its task best, because it provides a smoother and more efficient way for animating by calling the animation frame when the system is ready to paint the frame. The number of callbacks is usually 60 times per second and may be reduced to a lower rate when running in background tabs.
