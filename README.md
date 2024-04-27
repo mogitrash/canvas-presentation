@@ -8,7 +8,7 @@ Today we will talk about Canvas HTML, a technology that allows you to create int
 
 Canvas HTML is a powerful tool that can significantly improve the user experience and make websites more attractive and functional. It opens up wide opportunities for creating graphics, animations and interactive elements that were previously only available in applications.
 
-In this presentation, we will look at the basic concepts of Canvas HTML, its advantages and disadvantages, as well as examples of use. We will also look at some frameworks and libraries that make the work much more convenient.
+In this presentation, we will look at the basic concepts of Canvas HTML as well as examples of use. We will also look at some frameworks and libraries that make the work much more convenient.
 
 Let's get started!
 
@@ -44,7 +44,7 @@ ctx.stroke();
 
 1. First, we use the `moveTo(x,y)` method to indicate the place where our line will start
 2. Then we use the `lineTo(x,y)` method to connect the start point to the end point with a continuous line
-3. Method `stroke()` strokes (outlines) the current with the current stroke style.
+3. Method `stroke()` strokes the current line with the current stroke style.
 
 Congratulations! We drew our first line using canvas.
 
@@ -141,3 +141,53 @@ There are 3 main ways to **schedule update** of canvas:
       Tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint.
 
 Despite the first two methods, `requestAnimationFrame(callback)` copes with its task best, because it provides a smoother and more efficient way for animating by calling the animation frame when the system is ready to paint the frame. The number of callbacks is usually 60 times per second and may be reduced to a lower rate when running in background tabs.
+
+Example of simple animation: 
+
+```
+const canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+ctx.fillStyle = "red";
+
+let x = 0;
+let y = 0;
+
+window.requestAnimationFrame(anim);
+
+function anim() {
+  ctx.clearRect(0, 0, 300, 300);
+
+  ctx.fillRect(x, y, 100, 100);
+
+  x++;
+  y++;
+
+  if (x <= 200 && y <= 200) {
+    window.requestAnimationFrame(anim);
+  }
+}
+```
+
+And here is the result of our code:
+
+![CPT2404262208-300x300](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/6d7703f1-3710-4c4a-b5c5-ba6b92a64ad0)      
+
+But, our animation is not the top of canvases abilities. I found a couple of mesmerizing animations made with canvas:
+
+1. This animation of the Earth and the Sun made by MDN
+   
+   ![CPT2404272141-333x331](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/460bbad5-5187-4c0f-80ee-2baef212b316)
+
+2. Next up is this beautiful interactive and fully customizable animation
+ 
+ ![Animation3dsfsdf](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/dce5f702-9469-4ec3-94ca-8f6c498f124e)
+
+3. A Tearable Cloth animation that simulates the physics of the cloth and interacts with the user
+  
+   ![sdfsd](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/9b59496d-8e9d-41f2-963e-61cd8baca532)
+
+The above animations are only a small part of what canvas is capable of!
+
+### Frameworks
+
+
