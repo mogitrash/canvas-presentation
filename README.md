@@ -178,7 +178,7 @@ But, our animation is not the top of canvases abilities. I found a couple of mes
    
    ![CPT2404272141-333x331](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/460bbad5-5187-4c0f-80ee-2baef212b316)
 
-2. Next up is this beautiful interactive and fully customizable animation
+2. Next up is this beautiful interactive and fully customizable orbital trails animation
  
  ![Animation3dsfsdf](https://github.com/mogitrash/canvas-presentation-transcript/assets/140188066/dce5f702-9469-4ec3-94ca-8f6c498f124e)
 
@@ -188,6 +188,32 @@ But, our animation is not the top of canvases abilities. I found a couple of mes
 
 The above animations are only a small part of what canvas is capable of!
 
-### Frameworks
+## Frameworks/Libraries
 
+I have selected 3 of the most popular frameworks, let's briefly look at the features of each of them!
 
+### Fabric.js
+
+ - Features: Fabric.js offers a rich feature set including shapes, paths, images, text, gradients, and patterns. It provides an object-oriented approach for easy manipulation of individual canvas objects.
+ - Interactivity: Known for its interactive capabilities, Fabric.js supports drag-and-drop, scaling, rotation, and various events like mouse clicks and hover effects.
+ - Ease of Use: Fabric.js is praised for its simplicity, well-documented API, and intuitive nature, catering to both beginners and experienced developers.
+ - Community and Support: With a vibrant community, Fabric.js provides ample resources, tutorials, and support for developers.
+
+### Konva.js
+
+ - Performance: Konva.js excels in high-performance rendering, ideal for complex and interactive HTML5 canvas applications with smooth animations and interactions.
+ - Layering: Key feature includes support for layers, enabling efficient organization and management of canvas elements with flexibility in design.
+ - Tweening and Animation: Built-in support for tweening and animation simplifies dynamic visual effects creation by animating properties like position, scale, rotation, and opacity.
+ - Documentation and Examples: Konva.js offers comprehensive documentation and a variety of examples to facilitate quick start and exploration of its capabilities.
+
+### EaselJS
+
+ - Display List: EaselJS utilizes a display list architecture akin to Flash development, simplifying object creation and management on the canvas.
+ - Cross-Platform Compatibility: Designed for compatibility across devices and browsers, EaselJS ensures consistent performance and behavior on various platforms.
+ - Scalability: EaselJS is scalable for applications of different complexities, from simple games to enterprise-grade interactive experiences, with the ability to extend and customize functionality as needed.
+
+## Summary
+
+In summary, Canvas HTML presents a dynamic means to enrich web experiences with interactive elements. We've explored its fundamentals, including drawing shapes and text, along with basic animations. Additionally, popular frameworks like Fabric.js, Konva.js, and EaselJS offer streamlined workflows and advanced features for canvas development. Together, these tools empower developers to craft engaging and visually appealing web applications, fostering creativity and innovation in web design.
+
+**Goodbye!**
