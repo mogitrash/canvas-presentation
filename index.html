@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Hello everybody!</h2>
+            <img class="r-stretch" data-src="./assets/utyaHi.gif" />
+
+            <aside class="notes">
+              Today we will talk about Canvas HTML, a technology that allows you
+              to create interactive and dynamic elements on web pages. Canvas
+              HTML is a powerful tool that can significantly improve the user
+              experience and make websites more attractive and functional. It
+              opens up wide opportunities for creating graphics, animations and
+              interactive elements that were previously only available in
+              applications.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Canvas</h2>
+
+            <ul>
+              <li class="fragment">Canvas Basics</li>
+              <li class="fragment">Examples of Use</li>
+              <li class="fragment">Libraries</li>
+            </ul>
+
+            <aside class="notes">
+              In this presentation, we will look at the basic concepts of Canvas
+              HTML as well as examples of use. We will also look at some
+              frameworks and libraries that make the work much more convenient.
+            </aside>
+          </section>
+        </section>
+        <section>
+          <section>Canvas Basics</section>
+          <section>
+            <pre><code data-trim>
+						<canvas id="myCanvas" width="300" height="300"></canvas>
+  				</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+  				</code></pre>
+
+            <aside class="notes">
+              Before using canvas, we need to get its drawing context, for this
+              we use the following script
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="1"> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+  				</code></pre>
+
+            <aside class="notes">
+              First we get our canvas element from the page...
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="2"> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+  				</code></pre>
+
+            <aside class="notes">then we get its drawing context</aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p data-auto-animate>Draw a Line</p>
+
+            <pre data-id="code-animation"><code data-trim data-line-numbers> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.moveTo(0, 0);
+						ctx.lineTo(250, 200);
+						ctx.stroke();
+  				</code></pre>
+
+            <aside class="notes">
+              After getting the context, we can start using it, let's start with
+              a simple shape - from the line.
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <p data-auto-animate>Draw a Line</p>
+
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="3"> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.moveTo(0, 0);
+						ctx.lineTo(250, 200);
+						ctx.stroke();
+  				</code></pre>
+
+            <aside class="notes">
+              First, we use the moveTo(x,y) method to indicate the place where
+              our line will start
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <p data-auto-animate>Draw a Line</p>
+
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="4"> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.moveTo(0, 0);
+						ctx.lineTo(250, 200);
+						ctx.stroke();
+  				</code></pre>
+
+            <aside class="notes">
+              Then we use the lineTo(x,y) method to connect the start point to
+              the end point with a continuous line
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <p data-auto-animate>Draw a Line</p>
+
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="5"> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.moveTo(0, 0);
+						ctx.lineTo(250, 200);
+						ctx.stroke();
+  				</code></pre>
+
+            <aside class="notes">
+              Method stroke() strokes the current line with the current stroke
+              style.
+            </aside>
+          </section>
+
+          <section>
+            <h2>Congratulations!</h2>
+
+            <img data-src="./assets/line.png" />
+
+            <aside class="notes">We drew our first line using canvas.</aside>
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate>
+            <p data-auto-animate>Draw a Circle</p>
+
+            <pre data-id="code-animation"><code data-trim data-line-numbers> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+						ctx.stroke();
+
+  				</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <p data-auto-animate>Draw a Circle</p>
+
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="3"> 
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+						ctx.stroke();
+  				</code></pre>
+
+            <aside class="notes">
+              To draw a circle, we will use the method arc(x, y, radius,
+              startAngle, endAngle)
+            </aside>
+          </section>
+
+          <section>
+            <p>Result</p>
+
+            <img data-src="./assets/circle.png" />
+          </section>
+        </section>
+
+        <section>
+          <section data-auto-animate="">
+            <p>Draw/Stroke a Text</p>
+
+            <pre><code data-trim data-line-numbers>
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.font = "30px Arial";
+						ctx.fillText("Hello World", 10, 50);
+					</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <p>Draw/Stroke a Text</p>
+
+            <pre><code data-trim data-line-numbers="3">
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.font = "30px Arial";
+						ctx.fillText("Hello World", 10, 50);
+					</code></pre>
+
+            <aside class="notes">
+              Font property specifies the current text style
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <p>Draw/Stroke a Text</p>
+
+            <pre><code data-trim data-line-numbers="4">
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.font = "30px Arial";
+						ctx.fillText("Hello World", 10, 50);
+					</code></pre>
+
+            <aside class="notes">
+              Method fillText(text, x, y) draws a text string at the specified
+              coordinates
+            </aside>
+          </section>
+
+          <section>
+            <p>Result</p>
+
+            <img data-src="./assets/fillText.png" />
+
+            <p class="fragment">but...</p>
+
+            <pre class="fragment"><code data-trim data-line-numbers>
+						strokeText(text, x, y)
+					</code></pre>
+
+            <img data-src="./assets/strokeText.png" class="fragment" />
+
+            <aside class="notes">
+              We can also use the strokeText(text, x, y) to outline the text.
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <p>Draw/Stroke a Rectangle</p>
+
+            <pre><code data-trim data-line-numbers>
+						const canvas = document.getElementById("myCanvas");
+						let ctx = canvas.getContext("2d");
+						ctx.strokeRect(10,10, 150,100);
+					</code></pre>
+
+            <aside class="notes">
+              strokeRect(x, y, width, height) method draws a rectangle that is
+              oultined according to current strokeStyle
+            </aside>
+          </section>
+
+          <section>
+            <pre><code data-trim data-line-numbers>
+						ctx.strokeStyle = "pink";
+					</code></pre>
+
+            <img data-src="./assets/strokeRect.png" class="fragment" />
+
+            <pre class="fragment"><code data-trim data-line-numbers>
+						ctx.fillStyle = "pink";
+						ctx.fillRect(10, 10, 150, 100);
+					</code></pre>
+
+            <img data-src="./assets/fillRect.png" class="fragment" />
+
+            <aside class="notes">
+              there is also a fillRect(x, y, width, height) method that fills a
+              rectangle with color according to current fillStyle
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Basic animations</h2>
+
+            <div>
+              <img data-src="./assets/heartUtya.gif" />
+            </div>
+
+            <aside class="notes">
+              Since we're using JavaScript to control canvas elements, it's also
+              very easy to make animations. In this chapter we will take a look
+              at how to do some basic animations
+            </aside>
+          </section>
+
+          <section>
+            <p>Basic animations steps</p>
+
+            <ol>
+              <li class="fragment">Clear the canvas</li>
+              <li class="fragment">Save the canvas state</li>
+              <li class="fragment">Draw animated shapes</li>
+              <li class="fragment">Restore the canvas state</li>
+            </ol>
+
+            <aside class="notes">
+              <ul>
+                <li>
+                  Since each individual frame will occupy the entire surface of
+                  the canvas, we need to clean up before drawing a new frame of
+                  our animation
+                </li>
+                <li>
+                  Saving the canvas state is essential when you want to make
+                  temporary changes for a specific drawing operation and then
+                  revert to the original state.
+                </li>
+              </ul>
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Controlling an animation</h2>
+
+            <ol>
+              <li class="fragment">setInterval()</li>
+              <li class="fragment">setTimeout()</li>
+              <li class="fragment">
+                requestAnimationFrame() <span class="fragment">👑</span>
+              </li>
+            </ol>
+
+            <aside class="notes">
+              Despite the first two methods, requestAnimationFrame(callback)
+              copes with its task best, because it provides a smoother and more
+              efficient way for animating by calling the animation frame when
+              the system is ready to paint the frame. The number of callbacks is
+              usually 60 times per second and may be reduced to a lower rate
+              when running in background tabs.
+            </aside>
+          </section>
+
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers>
+							const canvas = document.getElementById("myCanvas");
+							let ctx = canvas.getContext("2d");
+							ctx.fillStyle = "red";
+
+							let x = 0;
+							let y = 0;
+
+							window.requestAnimationFrame(anim);
+						</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="5,6">
+							const canvas = document.getElementById("myCanvas");
+							let ctx = canvas.getContext("2d");
+							ctx.fillStyle = "red";
+
+							let x = 0;
+							let y = 0;
+
+							window.requestAnimationFrame(anim);
+						</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers="8">
+							const canvas = document.getElementById("myCanvas");
+							let ctx = canvas.getContext("2d");
+							ctx.fillStyle = "red";
+
+							let x = 0;
+							let y = 0;
+
+							window.requestAnimationFrame(anim);
+						</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre data-id="code-animation"><code data-trim data-line-numbers>
+							function anim() {
+								ctx.clearRect(0, 0, 300, 300);
+								ctx.fillRect(x, y, 100, 100);
+
+								x++;
+								y++;
+
+								if (x <= 200 && y <= 200) {
+									window.requestAnimationFrame(anim);
+								}
+							}
+						</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="2,3">
+							function anim() {
+								ctx.clearRect(0, 0, 300, 300);
+								ctx.fillRect(x, y, 100, 100);
+
+								x++;
+								y++;
+
+								if (x <= 200 && y <= 200) {
+									window.requestAnimationFrame(anim);
+								}
+							}
+						</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="5,6">
+							function anim() {
+								ctx.clearRect(0, 0, 300, 300);
+								ctx.fillRect(x, y, 100, 100);
+
+								x++;
+								y++;
+
+								if (x <= 200 && y <= 200) {
+									window.requestAnimationFrame(anim);
+								}
+							}
+						</code></pre>
+          </section>
+
+          <section data-auto-animate>
+            <pre
+              data-id="code-animation"
+            ><code data-trim data-line-numbers="8-10">
+							function anim() {
+								ctx.clearRect(0, 0, 300, 300);
+								ctx.fillRect(x, y, 100, 100);
+
+								x++;
+								y++;
+
+								if (x <= 200 && y <= 200) {
+									window.requestAnimationFrame(anim);
+								}
+							}
+						</code></pre>
+          </section>
+
+          <section>
+            <p>Result</p>
+            <img data-src="./assets/animatedRect.gif" />
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Examples of Use</h2>
+
+            <aside class="notes">
+              But, our animation is not the top of canvases abilities. I found a
+              couple of impressive animations made with canvas:
+            </aside>
+          </section>
+
+          <section>
+            <p>Earth and the Sun</p>
+
+            <img data-src="./assets/EarthAndSun.gif" />
+          </section>
+
+          <section>
+            <iframe
+              class="r-stretch"
+              data-src="https://codepen.io/alexzaworski/full/mEZvrG"
+              data-preload
+            ></iframe>
+
+            <aside class="notes">
+              interact with user, playing cute animation
+            </aside>
+          </section>
+
+          <section>
+            <iframe
+              class="r-stretch"
+              data-src="https://codepen.io/jackrugile/full/DdYrrV"
+              data-preload
+            ></iframe>
+
+            <aside class="notes">
+              it also interacts with the user, but also this animation is fully
+              customizable
+            </aside>
+          </section>
+
+          <section>
+            <iframe
+              class="r-stretch"
+              data-src="https://codepen.io/dissimulate/full/eZxEBO"
+              data-preload
+            ></iframe>
+
+            <aside class="notes">simulates realistic cloth behavior</aside>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Libraries</h2>
+            <ul>
+              <li class="fragment">Fabric.js</li>
+              <li class="fragment">Konva.js</li>
+            </ul>
+          </section>
+
+          <section>
+            <p>Fabric.js</p>
+
+            <ul>
+              <li class="fragment">Interactive object model</li>
+              <li class="fragment">SVG-to-canvas parser</li>
+            </ul>
+
+            <aside class="notes">
+              Fabric provides interactive object model on top of canvas element
+              Fabric also has SVG-to-canvas (and canvas-to-SVG) parser
+            </aside>
+          </section>
+
+          <section>
+            <iframe
+              class="r-stretch"
+              data-src="http://fabricjs.com/"
+              data-preload
+            ></iframe>
+            <aside class="notes">
+              In simple words, Fabric.js provides you with the capabilities of a
+              regular graphics editor
+            </aside>
+          </section>
+
+          <section>
+            <p>Konva.js</p>
+
+            <ul>
+              <li class="fragment">Object Oriented API</li>
+              <li class="fragment">
+                Native integration with web frameworks such as React, Vue
+              </li>
+            </ul>
+            <aside class="notes">
+              well, a couple of features konva.js which distinguishes it from
+              fabric.js
+            </aside>
+          </section>
+        </section>
+
+        <section>
+          <p>That's it!</p>
+          <div>
+            <img class="r-stretch" data-src="./assets/congratsUtya.gif" />
+          </div>
+
+          <aside class="notes">thank you for your attention</aside>
+        </section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        viewDistance: 5,
+        preloadIframes: true,
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
